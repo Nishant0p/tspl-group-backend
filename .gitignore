@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.cache/
+.strapi/
+.tmp/
+.env
+.DS_Store
+*.log
+*.sqlite
+*.db
+coverage/
