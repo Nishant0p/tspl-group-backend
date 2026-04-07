@@ -40,6 +40,51 @@ Strapi gives you many possible deployment options for your project including [St
 yarn strapi deploy
 ```
 
+### Railway
+
+This project is pre-configured for Railway with [railway.json](railway.json).
+
+1. Push this repository to GitHub.
+2. In Railway, create a new project from the GitHub repo.
+3. Add a PostgreSQL service in the same Railway project.
+4. Open your backend service and set these environment variables:
+
+```
+NODE_ENV=production
+HOST=0.0.0.0
+DATABASE_CLIENT=postgres
+DATABASE_URL=${{Postgres.DATABASE_URL}}
+DATABASE_SSL=true
+DATABASE_SSL_REJECT_UNAUTHORIZED=false
+
+APP_KEYS=<random1,random2>
+API_TOKEN_SALT=<random>
+ADMIN_JWT_SECRET=<random>
+TRANSFER_TOKEN_SALT=<random>
+JWT_SECRET=<random>
+ENCRYPTION_KEY=<random>
+
+WABA_API_KEY=<provider value>
+WABASMSBOX_API_KEY=<provider value>
+WABA_BOT_ID=<provider value>
+WABASMSBOX_BOT_ID=<provider value>
+WABASMSBOX_RCS_ENDPOINT=https://wabasmsbox.com/REST/direct/sendRCS
+WABASMSBOX_TEMPLATE_ENDPOINT=https://wabasmsbox.com/REST/direct/getRcsTemplateJson
+LEAD_RCS_BOT_ID=<provider value>
+LEAD_TEMPLATE_CODE=Universal
+LEAD_SMS_SENDER_ID=<provider value>
+LEAD_SMS_ENTITY_ID=<provider value>
+LEAD_SMS_TEMP_ID=<provider value>
+LEAD_SMS_TEXT=Hi {name}, thank you for contacting TSPL Group. Our team will connect with you shortly.
+```
+
+5. Deploy.
+
+Railway will run the configured build and start commands:
+
+- Build: `npm ci && npm run build`
+- Start: `npm run start`
+
 ## 📚 Learn more
 
 - [Resource center](https://strapi.io/resource-center) - Strapi resource center.
