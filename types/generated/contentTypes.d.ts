@@ -520,6 +520,13 @@ export interface ApiLeadLead extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     message: Schema.Attribute.RichText;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    notificationChannel: Schema.Attribute.Enumeration<['none', 'rcs', 'sms']> &
+      Schema.Attribute.DefaultTo<'none'>;
+    notificationMessageId: Schema.Attribute.String;
+    notificationResponse: Schema.Attribute.JSON;
+    notificationSent: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    notificationStatus: Schema.Attribute.String;
     phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     subject: Schema.Attribute.String;

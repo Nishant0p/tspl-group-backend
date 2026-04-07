@@ -32,6 +32,28 @@
     "consent": {
       "type": "boolean",
       "default": false
+    },
+    "notificationSent": {
+      "type": "boolean",
+      "default": false
+    },
+    "notificationChannel": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "rcs",
+        "sms"
+      ],
+      "default": "none"
+    },
+    "notificationStatus": {
+      "type": "string"
+    },
+    "notificationMessageId": {
+      "type": "string"
+    },
+    "notificationResponse": {
+      "type": "json"
     }
   }
 }
