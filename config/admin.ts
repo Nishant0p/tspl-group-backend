@@ -5,7 +5,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => 
 
   return {
     auth: {
-      secret: env('ADMIN_JWT_SECRET', env('JWT_SECRET', appKeys[0] || 'change-me-admin-jwt-secret')),
+      secret: env('ADMIN_JWT_SECRET', env('JWT_SECRET', appKeys?.[0] || 'change-me-admin-jwt-secret')),
     },
     apiToken: {
       salt: env('API_TOKEN_SALT'),
