@@ -82,7 +82,7 @@ LEAD_SMS_TEXT=Hi {name}, thank you for contacting TSPL Group. Our team will conn
 
 Railway will run the configured build and start commands:
 
-- Build: `npm ci && npm run build`
+- Build: `npm run build`
 - Start: `npm run start`
 
 ## 📚 Learn more
